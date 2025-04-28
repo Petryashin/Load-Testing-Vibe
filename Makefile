@@ -5,12 +5,6 @@ URL ?= http://localhost:8080
 WORKERS ?= 10
 DURATION ?= 30s
 
-# Setup project structure
-setup:
-	@echo "Setting up project structure..."
-	@mkdir -p cmd internal/loadtest internal/config pkg/metrics
-	@mv main.go cmd/
-
 # Run the load test
 run:
 	@echo "Running load test..."
@@ -22,7 +16,6 @@ run:
 # Help
 help:
 	@echo "Available commands:"
-	@echo "  make setup                                    - Create project structure and move main.go"
 	@echo "  make run                                      - Run with default parameters"
 	@echo "  make run URL=http://your-url.com             - Run with custom URL"
 	@echo "  make run WORKERS=50                          - Run with custom number of workers"
